@@ -54,23 +54,15 @@ class _MyHomeState extends State<MyHome> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 8),
-                TextField(
-                  controller: tfController,
-                  onChanged: (value) => setState(() {
-                    inputText = value;
-                  }),
-                  decoration: const InputDecoration(
-                    floatingLabelBehavior: FloatingLabelBehavior.always,
-                    labelText: '글자수 세기',
-                    hintText: '글자수를 세고 싶은 글을 입력하세요.',
-                    border: OutlineInputBorder(),
-                  ),
-                  maxLines: null,
-                  minLines: 10,
-                  keyboardType: TextInputType.multiline,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('한글만: ${onlyHangul.length}', style: const TextStyle(color: Colors.redAccent)),
+                    Text('공백 제외: ${inputText.replaceAll(emptyRegex, '').length}', style: const TextStyle(color: Colors.green)),
+                    Text('모든 문자: ${inputText.length}'),
+                  ],
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 8),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -95,11 +87,21 @@ class _MyHomeState extends State<MyHome> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Text('모든 문자: ${inputText.length}'),
-                const SizedBox(height: 4),
-                Text('공백 제외: ${inputText.replaceAll(emptyRegex, '').length}', style: const TextStyle(color: Colors.green)),
-                const SizedBox(height: 4),
-                Text('한글만: ${onlyHangul.length}', style: const TextStyle(color: Colors.redAccent)),
+                TextField(
+                  controller: tfController,
+                  onChanged: (value) => setState(() {
+                    inputText = value;
+                  }),
+                  decoration: const InputDecoration(
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    labelText: '글자수 세기',
+                    hintText: '글자수를 세고 싶은 글을 입력하세요.',
+                    border: OutlineInputBorder(),
+                  ),
+                  maxLines: null,
+                  minLines: 10,
+                  keyboardType: TextInputType.multiline,
+                ),
               ],
             ),
           ),
