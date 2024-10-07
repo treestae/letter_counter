@@ -1,16 +1,3 @@
-# letter_count
+# 서예용 글자수 세기
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+글을 `붙여넣기`하면 총 글자수, 공백(엔터키, 탭, 스페이스 등) 제외 글자수, 순수 한글 글자수를 카운팅 해줍니다.
