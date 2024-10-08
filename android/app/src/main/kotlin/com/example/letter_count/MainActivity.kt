@@ -1,4 +1,4 @@
-package com.example.letter_count
+package com.treestae.letter_counter
 
 import io.flutter.embedding.android.FlutterActivity
 
